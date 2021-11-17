@@ -1,0 +1,23 @@
+﻿@model YemekHaneTakipOtomasyonu.Models.yemek_ogun
+
+
+@using (Html.BeginForm("OgunGuncelle", "Ogun", FormMethod.Post))
+{
+    <b>id</b>
+    @Html.TextBoxFor(x => x.id, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    <b>Öğün Adi</b>
+    @Html.TextBoxFor(x => x.ogun_ad, new { @class = "form-control" })
+    <br />
+    <b>Öğün Başlangıç</b>
+    @Html.TextBoxFor(x => x.basla, new { @class = "form-control" })
+    <br />
+    <b>Öğün Bitiş</b>
+    @Html.TextBoxFor(x => x.bitis, new { @class = "form-control" })
+    <br />
+    <b>Ücret</b>
+    @Html.TextBoxFor(x => x.ucret, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Öğün Güncelle</button>
+
+}

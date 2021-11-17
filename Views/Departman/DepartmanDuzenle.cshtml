@@ -1,0 +1,14 @@
+﻿@model YemekHaneTakipOtomasyonu.Models.kod_departman
+
+
+@using (Html.BeginForm("DepartmanGuncelle", "Departman", FormMethod.Post))
+{
+    <b>id</b>
+    @Html.TextBoxFor(x => x.id, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    <b>Departman Adi</b>
+    @Html.TextBoxFor(x => x.aciklama, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Departman Güncelle</button>
+
+}

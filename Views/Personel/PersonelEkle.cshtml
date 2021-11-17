@@ -1,0 +1,30 @@
+﻿@model YemekHaneTakipOtomasyonu.Models.personel_kartlari
+
+<form class="form-group" method="post">
+
+    <b>Personel Adi</b>
+    @Html.TextBoxFor(x => x.adi, new { @class = "form-control" })
+    <br />
+    <b>Personel Soyadi</b>
+    @Html.TextBoxFor(x => x.soyadi, new { @class = "form-control" })
+    <br />
+    <b>Unvanı</b>
+    @Html.TextBoxFor(x => x.unvani, new { @class = "form-control" })
+    <br />
+    <b>Şirket</b>
+    @Html.DropDownListFor(x => x.sirket.id, (List<SelectListItem>)ViewBag.srktdgr, new { @class = "form-control" })
+    <br />
+    
+    <b>Departman</b>
+    @Html.DropDownListFor(x => x.departman.id, (List<SelectListItem>)ViewBag.dprtdgr, new { @class = "form-control" })
+    <br />
+    <b>Bolum</b>
+    @Html.DropDownListFor(x => x.bolum.id, (List<SelectListItem>)ViewBag.blmdgr, new { @class = "form-control" })
+    <br />
+    <b>Kontör</b>
+    @Html.TextBoxFor(x => x.kalankontor, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Personel Ekle</button>
+
+
+</form>

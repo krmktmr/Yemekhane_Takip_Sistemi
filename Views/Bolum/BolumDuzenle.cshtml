@@ -1,0 +1,14 @@
+﻿@model YemekHaneTakipOtomasyonu.Models.kod_bolum
+
+
+@using (Html.BeginForm("BolumGuncelle", "Bolum", FormMethod.Post))
+{
+    <b>id</b>
+    @Html.TextBoxFor(x => x.id, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    <b>Bölüm Adi</b>
+    @Html.TextBoxFor(x => x.aciklama, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Bölüm Güncelle</button>
+
+}

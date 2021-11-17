@@ -1,0 +1,14 @@
+﻿@model YemekHaneTakipOtomasyonu.Models.kod_sirket
+
+
+@using (Html.BeginForm("SirketGuncelle", "Sirket", FormMethod.Post))
+{
+    <b>id</b>
+    @Html.TextBoxFor(x => x.id, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    <b>Şirket Adı</b>
+    @Html.TextBoxFor(x => x.aciklama, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Şirket Güncelle</button>
+
+}

@@ -1,0 +1,51 @@
+﻿@using YemekHaneTakipOtomasyonu.Models
+@model List<personel_kartlari>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/css/Index.css" rel="stylesheet" />
+    <div class="container index">
+        <h2>Personel Listesi</h2>
+        <div class="table-wrapper">
+            <table class="fl-table">
+                <thead>
+                    <tr>
+                        <th>Kart No</th>
+                        <th>AdıSoyadı</th>
+                        <th>Soyadı</th>
+                        <th>Sirket</th>
+                        <th>Departman</th>
+                        <th>Bolum</th>
+                        <th>Ünvanı</th>
+                        <th>Kontör</th>
+                        <th>Giriş Tarihi</th>
+                        <th>Düzenle</th>
+                        <th>Sil</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @{
+                        foreach (var x in Model)
+                        {
+
+                            <tr>
+                                <td>@x.kartno</td>
+                                <td>@x.adi</td>
+                                <td>@x.soyadi</td>
+                                <td>@x.sirket.aciklama</td>
+                                <td>@x.departman.aciklama</td>
+                                <td>@x.bolum.aciklama</td>
+                                <td>@x.unvani</td>
+                                <td>@x.kalankontor</td>
+                                <td>@String.Format("{0:dd/MM/yyyy}", x.giristarihi)</td>
+                                <td><a href="/Personel/PersonelDuzenle/@x.kartno" class="btn btn-success">Düzenle</a></td>
+                                <td><a href="/Personel/PersonelSil/@x.kartno" class="btn btn-danger">Sil</a></td>
+                            </tr>
+                        }
+                        <tr>
+                            <td colspan="11" rowspan="2"><a href="/Personel/PersonelEkle" class="btn btn-info">Personel Ekle</a></td>
+                        </tr>
+                    }
+                </tbody>
+</table>
+        </div>
+        </div>

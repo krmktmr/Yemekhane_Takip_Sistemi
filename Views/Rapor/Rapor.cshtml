@@ -1,0 +1,55 @@
+﻿@using YemekHaneTakipOtomasyonu.Models
+@model List<hareketler>
+@{
+    ViewData["Title"] = "Rapor Page";
+}
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link href="~/css/Index.css" rel="stylesheet" />
+<div class="container index">
+    <h2>Yemekhane Rapor</h2>
+    <div class="table-wrapper">
+        <table class="fl-table">
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Kart No</th>
+                    <th>Personel Adı Soyadı</th>
+                    <th>Tarih</th>
+                    <th>Saat</th>
+                    <th>Öğün Adı </th>
+                    <th>Geçiş Durumu</th>
+                    <th>Kalan Kontör</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @{ int say = 0;
+                    foreach (var x in Model)
+                    {
+
+                        <tr>
+                            <td>@x.id</td>
+                            <td>@x.kartno</td>
+                            <td>@x.isim</td>
+                            <td>@String.Format("{0:dd/MM/yyyy}", x.tarih_saat)</td>
+                            <td>@String.Format("{0:HH:mm:ss}", x.tarih_saat)</td>
+                            <td>@x.ogun.ogun_ad</td>
+                            <td>@x.gecisdurum</td>
+                            <td>@x.Kontor</td>
+
+                        </tr>
+                        say++;
+                        if (say == 20)
+                        {
+                            break;
+                        }
+                    }
+                }
+                <tr>
+                    <td colspan="8" rowspan="2"><a href="/Rapor/RaporTemizle" class="btn btn-danger">Rapor Temizle</a></td>
+                </tr>
+
+</table>
+    </div>
+
+</div>

@@ -1,0 +1,17 @@
+﻿@model YemekHaneTakipOtomasyonu.Models.users
+
+
+@using (Html.BeginForm("KullaniciGuncelle", "Admin", FormMethod.Post))
+{
+    <b>id</b>
+    @Html.TextBoxFor(x => x.id, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    <b>Kullanıcı Adı</b>
+    @Html.TextBoxFor(x => x.kullanici, new { @class = "form-control" })
+    <br />
+    <b>Şifre</b>
+    @Html.TextBoxFor(x => x.sifre, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Kullanıcı Güncelle</button>
+
+}

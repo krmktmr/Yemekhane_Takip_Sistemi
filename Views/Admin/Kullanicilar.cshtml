@@ -1,0 +1,43 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutDenetim.cshtml";
+}
+
+@using YemekHaneTakipOtomasyonu.Models
+@model List<users>
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link href="~/css/Index.css" rel="stylesheet" />
+<div class="container index">
+    <h2>Kullanıcılar</h2>
+    <div class="table-wrapper">
+        <table class="fl-table">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Kullanıcı Adı</th>
+                    <th>Şifre</th>
+                    <th>Düzenle</th>
+                    <th>Sil</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @{
+                    foreach (var x in Model)
+                    {
+
+                        <tr>
+                            <td>@x.id</td>
+                            <td>@x.kullanici</td>
+                            <td>@x.sifre</td>
+                            <td><a href="/Admin/KullaniciDuzenle/@x.id" class="btn btn-success">Düzenle</a></td>
+                            <td><a href="/Admin/KullaniciSil/@x.id" class="btn btn-danger">Sil</a></td>
+                        </tr>
+                    }
+                    <tr>
+                        <td colspan="5" rowspan="2"><a href="/Admin/KullaniciEkle" class="btn btn-info">Kullanıcı Ekle</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
